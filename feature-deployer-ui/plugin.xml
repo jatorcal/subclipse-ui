@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="feature.deployer.preferences.page.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="feature.deployer.preferences.page.Perspective"
+            id="feature.deployer.preferences.page.perspective">
+      </perspective>
+   </extension>
+    <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="feature.deployer.preferences.page.View"
+            id="feature.deployer.preferences.page.view">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               standalone="true"
+               minimized="false"
+               relative="org.eclipse.ui.editorss"
+               relationship="left"
+               id="feature.deployer.preferences.page.view">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="feature.deployer.preferences.page.preferencepage.MyPreferencePage1"
+            id="feature.deployer.preferences.page.preferencepage1"
+            name="MyPreference Page">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <command
+               commandId="org.eclipse.ui.window.preferences"
+               label="Show Preferences"
+               style="push">
+         </command>
+         <command
+               commandId="feature.deployer.preferences.page.showPreferenceValues"
+               label="Show Values"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="feature.deployer.preferences.page.handler.ShowPreferenceValues"
+            id="feature.deployer.preferences.page.showPreferenceValues"
+            name="Show">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="feature.deployer.preferences.page.preferencepage.MyInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
