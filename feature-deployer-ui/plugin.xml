@@ -78,5 +78,59 @@
             class="feature.deployer.preferences.page.preferencepage.MyInitializer">
       </initializer>
    </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="feature.deployer.command.SampleCommand"
+            class="feature.deployer.command.SampleCommand">
+      </handler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:common.new.menu?after=new">
+         <command
+               commandId="feature.deployer.command.SampleCommand"
+               icon="icons/features.png"
+               label="Example"
+               style="push">
+            <visibleWhen>
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <instanceof
+                           value="org.eclipse.core.resources.IResource">
+                     </instanceof>                    
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>     
+   </extension>
+   
+   
+	<actionSet label="%SVNActionSet.label" visible="false" id="org.tigris.subversion.subclipse.actionSet">
+		<action 
+			definitionId="feature.deployer.command.samplecommand" 
+			label="%SVNAction.tigris.createRelease" icon="icons/full/empty/empty.gif" 
+			helpContextId="feature.deployer.command.samplecommand" 
+			class="feature.deployer.command.SampleCommand" 
+			tooltip="%SVNAction.tigris.createRelease" 
+			menubarPath="org.tigris.subversion.subclipse.svnmenu/SVNGroupMenu4" 
+			id="feature.deployer.command.samplecommand"></action>		
+	</actionSet>
+   
+	<extension point="org.eclipse.ui.commands">
+		<category name="%SVNActionSet.categoryName" description="%SVNActionSet.description" id="org.tigris.subversion.subclipse.commandCategory"></category>
+		<command 
+			categoryId="org.tigris.subversion.subclipse.commandCategory"
+			name="%SVNAction.tigris.createRelease"
+			id="feature.deployer.command.samplecommand"/>
+	</extension>
+   
 
 </plugin>

@@ -19,6 +19,8 @@ public class Activator extends AbstractUIPlugin {
 	 * The constructor
 	 */
 	public Activator() {
+		super();
+		plugin = this;
 	}
 
 	/*
@@ -57,5 +59,14 @@ public class Activator extends AbstractUIPlugin {
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
+	
+	/**
+	 * Returns the singleton plug-in instance.
+	 * 
+	 * @return the plugin instance
+	 */
+	public static Activator getPlugin() {
+		return plugin;
 	}
 }
