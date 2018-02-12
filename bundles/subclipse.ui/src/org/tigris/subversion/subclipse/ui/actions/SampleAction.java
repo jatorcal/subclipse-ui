@@ -16,7 +16,7 @@ import org.tigris.subversion.subclipse.core.ISVNRemoteResource;
 import org.tigris.subversion.subclipse.ui.ISVNUIConstants;
 import org.tigris.subversion.subclipse.ui.wizards.ClosableWizardDialog;
 
-import feature.deployer.wizard.DeployFeatureWizard;
+import com.feature.deployer.ui.wizards.DeployFeatureWizard;
 
 /**
  * Action to move a remote resource on repository
