@@ -10,18 +10,17 @@
  ******************************************************************************/
 package org.tigris.subversion.subclipse.ui.actions;
 
+import com.feature.deployer.ui.wizards.DeployFeatureWizard;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.tigris.subversion.subclipse.core.ISVNRemoteResource;
 import org.tigris.subversion.subclipse.ui.ISVNUIConstants;
 import org.tigris.subversion.subclipse.ui.wizards.ClosableWizardDialog;
 
-import com.feature.deployer.ui.wizards.DeployFeatureWizard;
-
 /**
  * Action to move a remote resource on repository
  */
-public class SampleAction extends SVNAction {
+public class DeployFeatureAction extends SVNAction {
 
 	/* (non-Javadoc)
 	 * @see org.tigris.subversion.subclipse.ui.actions.SVNAction#execute(org.eclipse.jface.action.IAction)
@@ -37,7 +36,7 @@ public class SampleAction extends SVNAction {
         
 		
 		
-		DeployFeatureWizard wizard = new DeployFeatureWizard((ISVNRemoteResource)selection.getFirstElement());
+		DeployFeatureWizard wizard = new DeployFeatureWizard(completeFeatureUri);
                 
 		
         WizardDialog dialog = new ClosableWizardDialog(shell, wizard);

@@ -301,13 +301,13 @@
          <action
                label="%SVNFlow.dia.deployFeature"
                icon="icons/full/aDia_flow/deploy.gif"
-               class="org.tigris.subversion.subclipse.ui.actions.SampleAction"
+               class="org.tigris.subversion.subclipse.ui.actions.DeployFeatureAction"
                menubarPath="miscGroup"
                id="org.tigris.subversion.subclipse.ui.sample">
          </action> 
          <action
                label="%SVNFlow.dia.createReleaseCandidate"
-               class="org.tigris.subversion.subclipse.ui.actions.SampleAction"
+               class="org.tigris.subversion.subclipse.ui.actions.ReleaseCandidateAction"
                menubarPath="miscGroup"
                id="org.tigris.subversion.subclipse.ui.sample">
          </action> 
